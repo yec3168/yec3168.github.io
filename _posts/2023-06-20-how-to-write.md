@@ -11,6 +11,8 @@ mermaid: true  # 표생성 도구
 pin: true  # 홈페이지 메인화면에 게시물 고정
 #image : /path/to/image-file 포스트 최상단에 이미지를 넣고 싶을때
 ---
+# Information
+시작하기 앞서 아래 내용은 [J1mmyson](https://j1mmyson.github.io/posts/postingGuide/#front-matter) 의 블로그를 참고하여 공부함.
 
 
 ## 파일 이름
@@ -29,7 +31,7 @@ categories: [TOP_CATEGORIE, SUB_CATEGORIE]
 tags: [TAG]		# TAG는 반드시 소문자
 ---
 ```
-> title: 포스팅 제목
+> title: 포스팅 제목 
 > date : 날짜
 > Categories : 최대 2개까지 등록 가능
 > tags : 0~무한 개 까지 등록
@@ -101,4 +103,4 @@ pin: true
  <code class="highlighter-rouge">```</code>를 통해 코드블럭을 생성가능하다.
 
 ## Information
-위 글은 [J1mmyson](https://j1mmyson.github.io/posts/postingGuide/#front-matter) 의 블로그를 참고하여 만들어졌다.
+위 글은 [J1mmyson](https://j1mmyson.github.io/posts/postingGuide/#front-matter) 의 블로그를 참고하여 공부함.
