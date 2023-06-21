@@ -84,4 +84,4 @@ Ruby를 통해 로컬로 확인해보자
 
 
 # 출처
-위 정보는 [하얀눈길](https://www.irgroup.org/posts/utternace-comments-system/)  블로그를 참고해서 만들어졌습니다.
+위 정보는 [하얀눈길](https://www.irgroup.org/posts/utternace-comments-system/) 와 [jaejae0015](https://jaejae0015.github.io/)블로그를 참고해서 만들어졌습니다.
