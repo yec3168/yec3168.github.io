@@ -17,7 +17,7 @@ pin: true  # 홈페이지 메인화면에 게시물 고정
 
 ## 파일 이름
 `YYYY-MM-DD-TITLE.md` 의 형식으로 파일을 만들어주고 `_post/` 폴더에 넣어준다.
-![mdfile](../assets/img/mdfile.png)
+![mdfile](/assets/img/mdfile.png)
 
 위 사진 처럼 파일을 생성해주면 된다.
 
