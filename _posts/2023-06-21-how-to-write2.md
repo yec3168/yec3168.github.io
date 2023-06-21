@@ -3,7 +3,7 @@ title: Chirpy Markdown 사용법
 author:
 name: Eungchan
 link: https://github.com/yec3168
-date: 2023-06-20
+date: 2023-06-21
 categories: [Blog]
 tags: [blogging, guide]
 math: true  # mathematical 기능
