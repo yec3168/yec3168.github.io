@@ -4,7 +4,7 @@ author:
 name: Eungchan
 link: https://github.com/yec3168
 date: 2023-06-21
-categories: [Blog]
+categories: [Blog, guide]
 tags: [blogging, guide]
 math: true  # mathematical 기능
 mermaid: true  # 표생성 도구
