@@ -21,10 +21,6 @@ Tacotron2는 mel-spectrograms를 예측하는 `sequence-to-sequence 모델`이�
 최종 `Input`은 text이고 `output`은 음성이다.
 
 
-> 인코더 `파란색 박스` <br>
-> 디코더 `주황색 박스` 
-{: .prompt-info }
-
 하지만 앞서 말한것처럼 input으로 text가 들어와서 바로 음성을 생성하는것은 어려운 일이기 때문에 tacotron2에서는 TTS를 두 단계로 나누어 처리한다.
 
  - Task1 : 텍스트로부터 mel-Spectrogram을 생성함
@@ -35,6 +31,11 @@ Task1은 Tacotron2모델이 담당하고, Task2는 Vocoder로서 WaveNet모델�
 <br><br><br>
 
 ![tacotron2_diagram](/assets/img/tacotron2/tacotron2_diagram.png)
+
+> 인코더 `파란색 박스` <br>
+> 디코더 `주황색 박스` 
+{: .prompt-info }
+
 ## 전처리
 모델을 학습하기 위해서 input과 output이 한쌍으로 묶인 데이터가 필요하다. 
 ```text
