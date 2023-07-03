@@ -48,6 +48,7 @@ data/tts_datas/000002.wav|Nice to meet you.
 
 >한국어는 [Tacotron2](https://yec3168.github.io/posts/tacotron2/) 해당 글을 확인하길 바란다.
 {: .prompt-info }
+<br>
 
 
 음성은 아직 이해를 하지 못하기도 했고 어려운부분이 있어서 일단 넘어가고 나중에 다시 다뤄보기로 하겠다.
