@@ -75,6 +75,8 @@ Tacotron2 모델을 통해 encoder, attention, decoder과정을 거쳐 얻은 me
 [tacotron2 논문설명](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechSynthesis/Tacotron2)에서는 mel-spectrogram을 컨디셔닝을 사용하여 가우시안분포에서 오디오 샘플을 생성한다는데 무슨말인지는 잘 모르겠다.
 
 
+# 다음 할것
+Tacotron2을 코드로 작성해보고 tacotron2에 대해 추가로 공부해보자.
 
 # 참고
 [Tacotron2 github](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechSynthesis/Tacotron2)
