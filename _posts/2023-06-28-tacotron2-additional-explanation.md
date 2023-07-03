@@ -75,4 +75,5 @@ Tacotron2 모델을 통해 encoder, attention, decoder과정을 거쳐 얻은 me
 
 
 
-# 기본 구성
+# 참고
+[Tacotron2 github](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechSynthesis/Tacotron2)
