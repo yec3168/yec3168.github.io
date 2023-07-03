@@ -47,6 +47,7 @@ data/tts_datas/000002.wav|Nice to meet you.
 우선 영어라면 띄어쓰기를 포함하여 알파벳을 나누는 작업을 한다 예를 들어 첫 번째 데이터 `I love you`의 텍스트는 'I', 'l', 'o', 'v', ... ,'u' 형태로 변경되어 one-hot-encoding을 적용하여 정수열로 변경한 뒤 다음 모델의 input으로 적용된다.
 
 >한국어는 [Tacotron2](https://yec3168.github.io/posts/tacotron2/) 해당 글을 확인하길 바란다.
+{: .prompt-info }
 
 
 음성은 아직 이해를 하지 못하기도 했고 어려운부분이 있어서 일단 넘어가고 나중에 다시 다뤄보기로 하겠다.
