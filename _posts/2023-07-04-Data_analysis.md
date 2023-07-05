@@ -69,12 +69,12 @@ pin: true  # 홈페이지 메인화면에 게시물 고정
 > 더 많은 데이터들을 찾고 싶다면 [공개 데이터 세트](#공개-데이터-세트) 참고.
 {: .prompt-info}
 
-# Test.ipynb
+# 명령어
 이제 Data_Analysis폴더에 파일을 하나 만들어보자. 이름은 `test.ipynb`로해서 만들면 된다.
 
 ![test 사진](/assets/img/data_analysis/basis/1/test.png)
 
-## 파일 열기
+## open()
 CSV 파일은 텍스트 파일이므로 `open()`함수를 통해 읽을 수 있다.
 
 ```python
@@ -83,7 +83,7 @@ with open('./data/서울특별시교육청남산도서관 장서 대출목록 (2
 ```
 open 파일은 `UTF-8` 형식으로 저장되어있다고 가정하지만, 다운받은 CSV 파일의 인코딩 방식이 다른거 같다. 
 
-## 파일 인코딩 확인하기
+## chardet_detect()
 `chardet 패키지`의 `chardet_detect()`함수는 파일의 인코딩 방식을 확인한다.
 
 ```python
@@ -92,7 +92,7 @@ with open('./data/서울특별시교육청남산도서관 장서 대출목록 (2
     d = f.readline()
 print(chardet.detect(d))
 ```
-{'encoding': 'EUC-KR', 'confidence': 0.99, 'language': 'Korean'}
+-> {'encoding': 'EUC-KR', 'confidence': 0.99, 'language': 'Korean'}
 
 인코딩 결과를 보면 `EUC-KR`로 되어있는걸로 볼 수 있다.
 
@@ -103,8 +103,53 @@ with open('./data/서울특별시교육청남산도서관 장서 대출목록 (2
     print(f.readline())
 ```
 
-# 마무리
-다음으로는 판다스를 통해 CSV 파일을 데이터프레임이라는 표 형식 형태로 만든 것과 사용법에 대해 알아보도록 하겠다.
+위 방식으로 인코딩 형식을 따로 지정함으로써 파일을 읽어 올 수가 있다.
+
+## read_csv()
+판다스에서 CSV을 읽어올때 사용하는 함수이다.
+
+```python
+import pandas as pd
+df = pd.read_csv('./data/서울특별시교육청남산도서관 장서 대출목록 (2023년 06월).csv', encoding="EUC-KR", low_memory=False)
+```
+`low_memory=False`로 해서 나누어 읽지 않고 한번에 읽는다. 하지만 low_memory를 사용하게 되면 한 번에 읽어오기 때문에 메모리 차지가 심하다. 이런 문제점을 보안하기 위해 사용하는 것이 `dtype 매개변수`로 데이터 타입을 지정하는 것이다.
+
+`dtype`은 각 열의 타입을 지정해주는 것으로 경고가 발생한 열에 타입을 정해 데이터 타입을 자동으로 찾지 않도록 한다.
+
+```python
+df = pd.read_csv('./data/서울특별시교육청남산도서관 장서 대출목록 (2023년 06월).csv', 
+       encoding="EUC-KR", dtype={'ISBN': str, '세트 ISBN': str, '주제분류번호':str})
+```
+
+## to_csv()
+데이터프레임을 csv로 저장하는법
+
+```python
+df.to_csv('./data/test.csv')
+```
+
+인덱스를 제거하여 저장할 수도 있다.
+```python
+df.to_csv('./data/test.csv', index =False)
+```
+## indexl_col 매개변수
+csv파일에 이미 `index`가 존재하면 index_col를 사용하여 추가되는 index를 제거한다. 저장된 test.csv파일에 첫번째 열에 인덱스가 존재하므로 `index_col = 0` 매개변수를 추가한다.
+
+```python
+df = pd.read_csv('./data/test.csv', index_col=0)
+```
+
+# 판다스
+CSV파일 같은 텍스트 파일을 `데이터프레임`라는 표 형태로 저장해주는 것.
+
+## 시리즈
+`1차원 배열`을 생각해보자. 1차원 배열의 원소들은 모두 같은 타입을 가진다. 데이터프레임 구조를 보면 아래와 같은데
+
+![데이터프레임](/assets/img/Data_analysis/basis/2/Series.png)
+
+2번째 행만 봐도 정수와 문자열이 섞여 있는구조로 이루어져있다. 데이터프레임은 열마다 다른 `데이터타입`을 사용할 수 있고, 각 열을 선택하면 이것을 `시리즈 객체`라고 한다.
+
+
 
 # 공개 데이터 세트
 ## 국내 사이트
