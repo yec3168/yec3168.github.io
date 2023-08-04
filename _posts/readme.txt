@@ -1,11 +1,11 @@
 ```
-title: Data Analysis 2(API)
+title: 
 author:
 name: Eungchan
 link: https://github.com/yec3168
-date: 2023-07-04
-categories: [Data_Analysis, basis]
-tags: [Data Analysis, API]
+date: 2023-
+categories: []
+tags: []
 math: true  # mathematical 기능
 mermaid: true  # 표생성 도구
 pin: true  # 홈페이지 메인화면에 게시물 고정
