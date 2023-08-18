@@ -3,12 +3,13 @@ title: Spring Boot
 author:
 name: Eungchan
 link: https://github.com/yec3168
-date: 2023-08-18
+date: 2023-08-17
 categories: [SpringBoot, basis]
 tags: [SpringBoot, learning]
 ---
 # 시작
  [스프링부트 위키독스](https://wikidocs.net/book/7601)를 보고 공부했다.
+
 # **스프링부트**
 자바의 웹 프레임워크로 기존 스프링 프레임워크에 톰캣 서버를 내장하고 여러 편의 기능들을 추가한 프레임워크이다. 간단히 말하자면 웹 프로그램을 간단하게 빠르게 개발할 수 있도록 도와주는 웹 프레임 워크이다.
 
@@ -45,7 +46,7 @@ sbs 프로젝트의 환경을 설정한다.
 
 
 # **실습 (URL 매핑)**
-`https://localhost:8080/sbb`페이지 접속시 "8월 18일 Spring boot 공부 1일차" 문자열을 출력하도록 작성해보자.
+`https://localhost:8080/sbb`페이지 접속시 "8월 17일 Spring boot 공부 1일차" 문자열을 출력하도록 작성해보자.
 
 위 구조를 보면 알 수 있듯이 해당 페이지 코드는 자바파일로 작성하기 때문에 `src/main/java디렉토리`에 작성하면 된다.
 
