@@ -84,13 +84,15 @@ JDBC URL 값을 `jdbc:h2:~/local`로 바꿔주고  연결하자.
 package com.mysite.community_site;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -110,6 +112,9 @@ public class Question {
 	private String content;
 	
 	private LocalDateTime createDate;
+	
+	@OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
+	private List<Answer> list;
 }
 
 ```
@@ -129,3 +134,128 @@ public class Question {
 
 
  ## 답변 엔티티 작성
+
+ 똑같은 위치에 `Answer.java`파일을 만들자.
+
+
+ ```java
+package com.mysite.community_site;
+
+
+import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.CreatedDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Answer {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@ManyToOne
+	private Question question;
+	
+	@Column(columnDefinition = "TEXT")
+	private String content;
+	
+	@CreatedDate
+	private LocalDateTime date;
+}
+ ```
+
+
+
+# Repository 생성
+
+`src/main/java/com/mysite/community_site`부분에 `QuestionRepository.java`파일을 생성한다.
+
+> QuestionRepository.java
+
+```java
+package com.mysite.community_site;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface  QuestionRepository extends JpaRepository<Question, Integer>{
+
+}
+```
+
+JpaRepository인터페이스를 상속하여 Repository를 생성했다. 상속할 때 `Generic` 타입으로 <앤티티타입, PK(기본키)속성>을 지정했다.
+
+똑같이 AnswerRepository도 만들자.
+
+```java
+package com.mysite.community_site;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AnswerRepository extends JpaRepository<Answer, Integer>{
+
+}
+```
+
+Repository를 만들었으니 Test를 해보자. `src/test/java/com/mysite/community_site`의 `CommunitySiteApplicationTests.java`파일을 아래와 같이 수정하자.
+
+```java
+package com.mysite.community_site;
+
+import java.time.LocalDateTime;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class CommunitySiteApplicationTests {
+
+	@Autowired
+	private QuestionRepository questionrepository;
+	
+	@Test
+	void testJpa() {
+		Question q1 = new Question();
+		q1.setSubject("생성자가 무엇인가요?");
+		q1.setContent("제곧내");
+		q1.setCreateDate(LocalDateTime.now());
+		this.questionrepository.save(q1);
+		
+		Question q2 = new Question();
+		q2.setSubject("java와 javascript의 차이점이 뭔가요?");
+		q2.setContent("제곧내");
+		q2.setCreateDate(LocalDateTime.now());
+		this.questionrepository.save(q2);
+	}
+
+}
+```
+
+Question q1, q2 객체를 생성하여 제목과 내용, 날짜를 적은 뒤 값을 QuestionRepository 데이터베이스의 저장한다.
+
+실행은 `Run -> Run As -> JUnit Test`으로 실행한다.
+
+> local서버가 가동중이면 중지하고 실행해야한다.
+
+
+# 결과 확인
+
+`localhost:8080/h2-console`로 들어가 작성했던 데이터가 무사히 들어갔는지 확인하자.
+
+```sql
+SELECT * 
+FROM Question
+```
+
+![결과](/assets/img/ssb/2/h2-result.png)
