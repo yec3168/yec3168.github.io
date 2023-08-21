@@ -1,5 +1,5 @@
 ---
-title: Spring Boot 2일차
+title: Spring Boot 2일차(JPA, ORM, H2)
 author:
 name: Eungchan
 link: https://github.com/yec3168
