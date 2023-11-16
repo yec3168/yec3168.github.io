@@ -114,3 +114,22 @@ void testJpa() {
 템플릿에는 여러가지 종류가 있는데 그중 `Thymleaf`엔진을 사용할 것이다.
 
 설치는 [템플릿 설정](https://wikidocs.net/161186)을 참고했다.
+
+```html
+# question_list.html
+<table>
+    <thead>
+        <tr>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="question : ${questionList}">
+            <td th:text="${question.subject}"></td>
+            <td th:text="${question.createDate}"></td>
+        </tr>
+    </tbody>
+</table>
+```
+`th:`는 템플릿 엔진에서 사용하는 속성이다. 이 부분이 자바코드와 연결이된다.
