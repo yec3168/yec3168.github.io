@@ -1,5 +1,5 @@
 ---
-title: Spring Boot 4일차
+title: Spring Boot 5일차
 author:
 name: Eungchan
 link: https://github.com/yec3168
@@ -18,6 +18,7 @@ Jetbrains사에서 제작한 자바 통합 개발 환경(IDE)이다. 물론 ecli
 Intellij를 개발한 Jetbrains공식홈페이지에 들어가면 Intellij의 설명을 볼 수 있다.
 
 ![인텔리제이 홈페이지](/assets/img/ssb/5/homepage.png)
+
 
 사진처럼 설명이 있는데 자세한건 강의를 듣고 코드를 치면서 확인해보자.
 
