@@ -16,7 +16,8 @@ tags: [SpringBoot, learning, Intellij]
 Jetbrains사에서 제작한 자바 통합 개발 환경(IDE)이다. 물론 eclipse로도 Springboot개발이 가능하지만 요즘 회사에서 다들 intellij로 개발한다는 이야기를 듣고선 시작했다.
 
 Intellij를 개발한 Jetbrains공식홈페이지에 들어가면 Intellij의 설명을 볼 수 있다.
-![공식홈페이지](/assets/img/ssb/5/homepage.png)
+
+![인텔리제이 홈페이지](/assets/img/ssb/5/homepage.png)
 
 사진처럼 설명이 있는데 자세한건 강의를 듣고 코드를 치면서 확인해보자.
 
