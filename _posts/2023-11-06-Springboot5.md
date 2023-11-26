@@ -31,5 +31,12 @@ Intellij를 설치하고 실행시키면 아래와 같은 사진이 나온다.
 # 실행 과정
 
 ![동작 화면](/assets/img/ssb/5/excute.png)
- (출처 : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)
-사용자가 웹 브라우저를 통해 접근한다면 
+ [출처 : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard)
+사용자가 웹 브라우저를 통해 `localhost:8080/hello`를 접근하면 내장 톰캣 서버를 먼저 거치고 그것을 스프링에게 전달한다. 스프링 내부에서는 컨트롤러가 `hello`와 매핑이되는 메소드를 호출하면서 data로 `hello!!`를 전달한다. 마지막으로 viewResolver를 통해 html로 변환 후 웹 브라우저로 보여준다.
+
+🔍 그러면 컨트롤러가 없으면 어떻게 될까?
+
+![동작 화면](/assets/img/ssb/5/no.png)
+
+동작은 비슷한데 만약에 컨트롤러가 없다면 스프링이 내부 resources안에 매핑이되는 값을 찾고 리턴해준다. 
+
