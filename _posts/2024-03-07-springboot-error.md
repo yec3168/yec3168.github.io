@@ -37,7 +37,7 @@ controller를 확인해보면 `CommentBoardFormDto`를 return 하게 되는데, 
 
 > 2024-03-07T22:23:13.753+09:00 ERROR 5164 --- [nio-9090-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: `Infinite recursion `(StackOverflowError)] with root cause
 
-아래와 같이 무한반복하는 부분이 존재한다고 나온다. debug를 통해 객체에는 값이 아래 사진과 같이 무한반복하다보니 `stack overflow`가 발생하여 값이 null 나오는 문제가 발생했다.
+아래와 같이 무한반복하는 부분이 존재한다고 나온다. debug에서 객체에는 값이 아래 사진과 같이 무한반복하다보니 `stack overflow`가 발생하여 값이 null 나오는 문제가 발생했다.
 
 ![middle](/assets/img/springboot/error/1/middle.png)
 
